@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 type Personal = {
-  sub: null | string;
+  sub: any;
   firstName: null | string;
   lastName: null | string;
   profile: undefined | string;

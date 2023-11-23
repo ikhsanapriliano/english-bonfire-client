@@ -7,6 +7,7 @@ import { Navigate } from "react-router-dom";
 
 function Step4() {
   const { id } = appUseSelector((state) => state.camp);
+  const sub = appUseSelector((state) => state.personal.data);
   const [question, setQuestion] = useState<number>(0);
   const [isTrue, setTrue] = useState<null | boolean>(null);
   const [answer, setAnswer] = useState<string>("");
@@ -54,6 +55,7 @@ function Step4() {
     return (
       <form method="post" action={"https://english-bonfire-server.up.railway.app/join"} className={`flex flex-col min-h-screen pt-10 items-center`}>
         <input type="hidden" value={id} name="id" />
+        <input type="hidden" value={sub?.sub} name="sub" />
         <h2>Step 4</h2>
         <h3>Are You Human?</h3>
         <div className={`flex flex-col justify-center items-center gap-3 my-5 lg:p-10 lg:border lg:shadow-sm shadow-gray-300 rounded-md`}>
